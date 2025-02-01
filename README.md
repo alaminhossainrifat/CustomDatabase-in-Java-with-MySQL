@@ -1,18 +1,60 @@
-## Getting Started
+# CustomDatabase - Java MySQL Database Creator
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## 📌 Overview
+CustomDatabase is a simple Java program that connects to a MySQL server and creates a new database. This project demonstrates how to use **JDBC (Java Database Connectivity)** to interact with a MySQL database.
 
-## Folder Structure
+## 🛠️ Features
+- Connects to a MySQL server using JDBC.
+- Creates a new database dynamically.
+- Implements exception handling for missing drivers and SQL errors.
 
-The workspace contains two folders by default, where:
+## 📂 Project Structure
+```
+CustomDatabase/
+│── src/
+│   └── CustomDatabase.java
+│── README.md
+│── .gitignore
+│── pom.xml (if using Maven)
+```
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## 🚀 Prerequisites
+Before running this project, ensure you have the following installed:
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- **Java Development Kit (JDK)**  
+- **MySQL Server** (Ensure it's running)  
+- **MySQL Connector/J (JDBC Driver)** ([Download Here](https://dev.mysql.com/downloads/connector/j/))  
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## ⚙️ Setup Instructions
 
-## Dependency Management
+### 1️⃣ Install MySQL JDBC Driver
+- Download the **MySQL Connector/J** `.jar` file.  
+- Add it to your project's classpath.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+### 2️⃣ Configure Database Credentials
+Update the following variables in `CustomDatabase.java`:
+```java
+static final String USER = "your_mysql_username";
+static final String PASSWORD = "your_mysql_password";
+static final String JDBC_URL = "jdbc:mysql://localhost:3306/";
+```
+
+### 3️⃣ Compile and Run
+#### Using Command Line
+```sh
+javac -cp ".;mysql-connector-java-<version>.jar" CustomDatabase.java
+java -cp ".;mysql-connector-java-<version>.jar" CustomDatabase
+```
+*(Replace `<version>` with the actual version of MySQL Connector/J you downloaded.)*
+
+#### Using an IDE (IntelliJ, Eclipse, VS Code)
+- Add **MySQL Connector/J** to the classpath.
+- Run the `CustomDatabase.java` file.
+
+## 🛑 Error Handling
+- If you see **"MySQL JDBC Driver not found"**, ensure the JDBC driver is added to your classpath.  
+- If you see **"Access denied"**, check your MySQL credentials.  
+- If **database already exists**, modify `databaseName` or check if the database was previously created.
+
+---
+🔨 **Happy Coding!** 🔧
