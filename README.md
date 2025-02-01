@@ -8,16 +8,6 @@ CustomDatabase is a simple Java program that connects to a MySQL server and crea
 - Creates a new database dynamically.
 - Implements exception handling for missing drivers and SQL errors.
 
-## 📂 Project Structure
-```
-CustomDatabase/
-│── src/
-│   └── CustomDatabase.java
-│── README.md
-│── .gitignore
-│── pom.xml (if using Maven)
-```
-
 ## 🚀 Prerequisites
 Before running this project, ensure you have the following installed:
 
